@@ -14,32 +14,28 @@ import {
   EditButton,
 } from "react-admin";
 
-const CustomerFilter = (props) => (
+const DiskTypeFilter = (props) => (
   <Filter {...props}>
-    <TextInput label="Search" source="id" alwaysOn />
+    <TextInput label="Search" source="typeName" alwaysOn />
   </Filter>
 );
 
-export const CustomerList = (props) => (
-  <List {...props} exporter={false} filters={<CustomerFilter />} bulkActionButtons={false}>
+export const DiskTypeList = (props) => (
+  <List {...props} exporter={false} filters={<DiskTypeFilter />} bulkActionButtons={false}>
     <Datagrid>
       <TextField source="id" />
-      <TextField source="fullname" />
-      <TextField source="phoneNumber" />
-      <TextField source="address" />
+      <TextField source="typeName" />
       <ShowButton label="" />
       <EditButton label="" />
     </Datagrid>
   </List>
 );
 
-export const CustomerShow = (props) => (
+export const DiskTypeShow = (props) => (
   <Show {...props}>
     <SimpleShowLayout>
       <TextField source="id" />
-      <TextField source="fullname" />
-      <TextField source="phoneNumber" />
-      <TextField source="address" />
+      <TextField source="typeName" />
       <TextField source="createdate" />
       <TextField source="createdby" />
       <TextField source="lastupdate" />
@@ -48,23 +44,19 @@ export const CustomerShow = (props) => (
   </Show>
 );
 
-export const CustomerCreate = (props) => (
+export const DiskTypeCreate = (props) => (
   <Create {...props} >
     <SimpleForm>
-      <TextInput source="fullname" />
-      <TextInput source="phoneNumber" />
-      <TextInput source="address" />
-      </SimpleForm>
+      <TextInput source="typeName" />
+    </SimpleForm>
   </Create>
 );
 
-export const CustomerEdit = (props) => (
+export const DiskTypeEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
       <TextInput source="id" options={{ disabled: true }} />
-      <TextInput source="fullname" />
-      <TextInput source="phoneNumber" />
-      <TextInput source="address" />
+      <TextInput source="typeName" />
     </SimpleForm>
   </Edit>
 );
