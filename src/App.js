@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Admin, Resource } from 'react-admin';
-import { PostList, PostShow, PostCreate, PostEdit } from "./posts";
 import { FirebaseAuthProvider, FirebaseDataProvider } from 'react-admin-firebase';
+import { CustomerList, CustomerShow, CustomerCreate, CustomerEdit } from './services/customers';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDFqVCSiBM6SJThy-Yqy1i5uXSU7FK2glc",
@@ -23,13 +23,7 @@ export default function App () {
       dataProvider={dataProvider}         
       authProvider={authProvider}
     >
-      <Resource 
-        name="posts" 
-        list={PostList} 
-        show={PostShow} 
-        create={PostCreate} 
-        edit={PostEdit} 
-      />
+      <Resource name="Customers" list={CustomerList} show={CustomerShow} create={CustomerCreate} edit={CustomerEdit} />
     </Admin>
   );
 }
